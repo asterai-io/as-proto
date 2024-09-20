@@ -12,7 +12,7 @@
   "scripts": {
     "postinstall": "lerna bootstrap",
     "build": "lerna run build",
-    "release": "auto shipit",
+    "release": "auto release",
     "test:prepare": "node tests/prepare.js",
     "test:run": "ava",
     "test": "yarn test:prepare && yarn test:run",
