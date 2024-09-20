@@ -1,7 +1,10 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - "*"
 jobs:
-  build-test-release:
+  build-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -36,10 +39,3 @@ jobs:
 
       - name: Test
         run: yarn test
-
-      - name: Release
-        if: "github.event_name == 'push' && !contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn release
