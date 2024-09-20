@@ -1,6 +1,6 @@
 {
   "name": "@asterai/as-proto",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "assembly/index.ts",
   "types": "assembly/index.ts",
   "license": "MIT",
