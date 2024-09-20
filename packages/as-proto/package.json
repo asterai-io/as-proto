@@ -1,11 +1,11 @@
 {
-  "name": "as-proto",
-  "version": "1.3.0",
+  "name": "@asterai/as-proto",
+  "version": "1.4.0",
   "main": "assembly/index.ts",
   "types": "assembly/index.ts",
   "license": "MIT",
-  "author": "Piotr Oleś <piotrek.oles@gmail.com>",
-  "repository": "https://github.com/piotr-oles/as-proto.git",
+  "author": "Piotr Oleś <piotrek.oles@gmail.com>, aseterai",
+  "repository": "https://github.com/asterai-io/as-proto.git",
   "tags": [
     "assemblyscript",
     "protobuf",
