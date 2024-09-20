@@ -57,7 +57,7 @@ message StarRepoMessage {
 //   protoc-gen-as v0.2.5
 //   protoc        v3.21.4
 
-import { Writer, Reader } from "as-proto/assembly";
+import { Writer, Reader } from "@asterai/as-proto/assembly";
 
 export class StarRepoMessage {
   static encode(message: StarRepoMessage, writer: Writer): void {

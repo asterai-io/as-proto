@@ -25,9 +25,11 @@ const jspbCls = require("./data/static_jspb.cjs").Test;
 const jspbBuf = new Uint8Array(Array.prototype.slice.call(pbjsBuf));
 const jspbMsg = jspbCls.deserializeBinary(jspbBuf);
 
+const PACKAGE_NAME = "@asterai/as-proto";
+
 import("./data/static_aspr.js").then(asprMod => [
   newSuite("encoding")
-      .add("as-proto", () => {
+      .add(PACKAGE_NAME, () => {
           asprMod.encode();
       })
       .add("protobuf.js", () => {
@@ -40,7 +42,7 @@ import("./data/static_aspr.js").then(asprMod => [
           jspbMsg.serializeBinary();
       }),
   newSuite("decoding")
-      .add("as-proto", () => {
+      .add(PACKAGE_NAME, () => {
           asprMod.decode();
       })
       .add("protobuf.js", () => {
@@ -53,7 +55,7 @@ import("./data/static_aspr.js").then(asprMod => [
           jspbCls.deserializeBinary(jspbBuf);
       }),
   newSuite("combined")
-      .add("as-proto", () => {
+      .add(PACKAGE_NAME, () => {
           asprMod.encodeDecode();
       })
       .add("protobuf.js", () => {

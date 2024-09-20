@@ -4,7 +4,7 @@ import {
   getPathWithoutExtension,
   ensureRelativeImportDot,
   getTypeName,
-} from "as-proto-gen/lib/names.js";
+} from "@asterai/as-proto-gen/lib/names.js";
 
 test("getPathWithoutExtension() returns file name without .proto suffix", (t) => {
   t.is(getPathWithoutExtension("./test.proto", ".proto"), "./test");

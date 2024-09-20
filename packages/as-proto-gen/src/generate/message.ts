@@ -14,6 +14,8 @@ import * as assert from "assert";
 import { ScopeContext } from "../scope-context";
 import { getSafeName } from "../reserved-keywords";
 
+const IMPORT_PATH = "@asterai/as-proto/assembly";
+
 function getMessageName(
   messageDescriptor: DescriptorProto,
   fileContext: FileContext,
@@ -73,7 +75,7 @@ function generateEncodeMethod(
 
   const fields = getAllFields(messageDescriptor);
 
-  const Writer = fileContext.registerImport("Writer", "as-proto/assembly");
+  const Writer = fileContext.registerImport("Writer", IMPORT_PATH);
   const Message = fileContext.registerDefinition(messageName);
 
   const scopeContext = new ScopeContext(fileContext, ["message", "writer"]);
@@ -99,9 +101,9 @@ function generateDecodeMethod(
 
   const fields = getAllFields(messageDescriptor);
 
-  const Reader = fileContext.registerImport("Reader", "as-proto/assembly");
+  const Reader = fileContext.registerImport("Reader", IMPORT_PATH);
   const Message = fileContext.registerDefinition(messageName);
-  fileContext.registerImport("Protobuf", "as-proto/assembly");
+  fileContext.registerImport("Protobuf", IMPORT_PATH);
 
   const scopeContext = new ScopeContext(fileContext, [
     "reader",
@@ -195,7 +197,7 @@ function generateHelperMethods(
   Message: string,
   fileContext: FileContext
 ): string {
-  const Protobuf = fileContext.registerImport("Protobuf", "as-proto/assembly");
+  const Protobuf = fileContext.registerImport("Protobuf", IMPORT_PATH);
 
   const encodeHelper = fileContext.registerDefinition(`encode${Message}`);
   const decodeHelper = fileContext.registerDefinition(`decode${Message}`);

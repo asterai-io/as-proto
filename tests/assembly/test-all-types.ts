@@ -1,7 +1,7 @@
 import { TestAllTypes } from "./asproto/test/TestAllTypes";
 import { ForeignEnum } from "./asproto/test/ForeignEnum";
 import { ForeignMessage } from "./asproto/test/ForeignMessage";
-import { Protobuf } from "as-proto/assembly";
+import { Protobuf } from "@asterai/as-proto/assembly";
 
 export function encode(): Uint8Array {
   const BYTES = new Uint8Array(4);

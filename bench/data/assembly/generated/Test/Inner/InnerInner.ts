@@ -3,7 +3,7 @@
 //   protoc-gen-as v0.9.2
 //   protoc        v3.20.3
 
-import { Writer, Reader } from "as-proto/assembly";
+import { Writer, Reader } from "@asterai/as-proto/assembly";
 import { Enum } from "../Enum";
 
 export class InnerInner {

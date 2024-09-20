@@ -3,7 +3,7 @@ import { Outer } from "./generated/Outer";
 import { Inner } from "./generated/Test/Inner";
 import { InnerInner } from "./generated/Test/Inner/InnerInner";
 import { Enum } from "./generated/Test/Enum";
-import { Protobuf } from "as-proto/assembly";
+import { Protobuf } from "@asterai/as-proto/assembly";
 
 const testDecoded = new Test(
   "Lorem ipsum dolor sit amet.",

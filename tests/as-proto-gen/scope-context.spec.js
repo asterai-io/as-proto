@@ -1,5 +1,5 @@
 import test from "ava";
-import { ScopeContext } from "as-proto-gen/lib/scope-context.js";
+import { ScopeContext } from "@asterai/as-proto-gen/lib/scope-context.js";
 
 const fileContext = {};
 

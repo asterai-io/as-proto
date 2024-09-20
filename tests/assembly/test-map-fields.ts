@@ -1,7 +1,7 @@
 import { TestMapFields } from "./asproto/test/TestMapFields";
 import { MapValueEnum } from "./asproto/test/MapValueEnum";
 import { MapValueMessage } from "./asproto/test/MapValueMessage";
-import { Protobuf } from "as-proto/assembly";
+import { Protobuf } from "@asterai/as-proto/assembly";
 
 export function encode(): Uint8Array {
   const message = new TestMapFields();
