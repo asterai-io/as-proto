@@ -541,10 +541,10 @@ export function isNullableFieldType(
 ): boolean {
   const fieldType = fieldDescriptor.getType();
   assert.ok(fieldType !== undefined);
-  // There is no null in protobuf3.
-  // It is not possible to distinguish between a message with default values
-  // versus a "null" message.
-  return false;
+  // There is no null in protobuf3 in the sense that empty bytes always
+  // successfully deserialize to default message values.
+  // But if a field is explicitly set as optional, it may be null.
+  return fieldDescriptor.hasProto3Optional();
 }
 
 export function isManagedFieldType(
