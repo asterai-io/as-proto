@@ -39,10 +39,20 @@ jobs:
       - name: Test
         run: yarn test
 
-      - name: Release
+      - name: Release (dry run)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npm config set access public
-          yarn release
+          cd packages/as-proto && npm publish --dry-run
+          cd ../as-proto-gen && npm publish --dry-run
+
+      - name: Release (dry run)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          npm config set access public
+          cd packages/as-proto && npm publish
+          cd ../as-proto-gen && npm publish
